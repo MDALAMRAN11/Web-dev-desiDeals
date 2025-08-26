@@ -29,22 +29,34 @@ document
                                     src="${productImage}"
                                     alt=""
                                 />
+                                <div class="flex justify-between items-center">
                                 <div>
                                     <h1 class="font-bold">${productTitle}</h1>
                                     <p class="font-light text-gray-400">
                                         <span>${productPrice}</span> Tk.
-                                    </p>
+                                    </p> 
+                                </div>
+                                <button id="delete-cart-button" class="btn btn-circle btn-sm bg-[#e527b2] text-white border-none">
+  <i class="fa-solid fa-trash"></i>
+</button>
                                 </div>`;
             purchaseSectionCart.appendChild(div);
 
             const totalPrice = document.getElementById("totalPrice").innerText;
             const newTotalPrice = parseInt(productPrice) + parseInt(totalPrice);
-            console.log(newTotalPrice);
+            //console.log(newTotalPrice);
             document.getElementById("totalPrice").innerText = newTotalPrice;
 
             const totalDiscount = document.getElementById("totalDiscount");
-            const totalPriceAfterDiscount = document.getElementById(
-                "totalPriceAfterDiscount"
-            );
+            const totalQuantity =
+                document.getElementById("totalQuantity").innerText;
+            const newQuantity = parseInt(totalQuantity) + 1;
+            console.log(newQuantity);
+
+            document.getElementById("totalQuantity").innerText = newQuantity;
         }
     });
+
+document
+    .getElementById("delete-cart-button")
+    .addEventListener("click", function () {});
